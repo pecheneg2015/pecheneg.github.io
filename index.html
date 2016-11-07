@@ -17,7 +17,9 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
   
   <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({TeX: {
+  extensions: ["AMSmath.js", "AMSsymbols.js"]},
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
 <script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
@@ -38,6 +40,52 @@
   </ul>
 </nav></header>
   <div id="content" class="inner">
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="title"><a href="/2016/11/08/eig/">Собственные числа и вектора</a></h1>
+  
+
+    <time datetime="2016-11-07T21:08:26.000Z">
+  <span class="day">8</span><span class="month">Nov</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <blockquote><p>В обществе векторов существуют особые представители, которые обладают внутренним стержнем и не желают изменять себе в трудные минуты.</p>
+<footer><strong>@mathprofi</strong><cite><a href="https://www.mathprofi.ru" target="_blank" rel="external">www.mathprofi.ru</a></cite></footer></blockquote>
+<p>Собственным вектор матрицы $A$ называется вектор, который при умножении которого на матрицу $A$ получаем коллинеарный вектор, т.е. тот же вектор, умноженный на некоторое число $\beta$, которое называют собственным числом. Обозначив собственный вектор за $x$ получаем :<br>$$ Ax=\beta x$$<br>Рассмотрим пример.<br>$$Ax=\begin{vmatrix}<br>            -1 &amp; -6 \\<br>            2 &amp; 6<br>        \end{vmatrix}<br> \cdot<br>        \begin{vmatrix}<br>            2  \\<br>            1<br>        \end{vmatrix}<br>=<br>    \begin{vmatrix}<br>            4  \\<br>            -2<br>    \end{vmatrix}<br>= 2 \cdot<br>    \begin{vmatrix}<br>            2  \\<br>            -1<br>    \end{vmatrix}$$     </p>
+<p>Здесь вектор $\begin{vmatrix}<br>            2  \\<br>            -1<br>    \end{vmatrix}$ - собственный вектор, а 2 - собственное число матрицы $A$.</p>
+
+    
+    
+    <footer class="meta">
+      
+      
+  <div class="tags">
+<a href="/tags/matlab/">matlab</a><a href="/tags/математика/">математика</a><a href="/tags/матрицы/">матрицы</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article>
+
   <article class="post">
   
     <div class="gallery">

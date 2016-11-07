@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Тестовый пост | Мой блог</title>
+  <title>Собственные числа и вектора | Мой блог</title>
   <meta name="author" content="Дмитрий Печенин">
 
   
@@ -56,46 +56,27 @@
   <header>
     
   
-    <h1 class="title">Тестовый пост</h1>
+    <h1 class="title">Собственные числа и вектора</h1>
   
 
-    <time datetime="2016-11-06T17:26:18.000Z">
-  <span class="day">6</span><span class="month">Nov</span>
+    <time datetime="2016-11-07T21:08:26.000Z">
+  <span class="day">8</span><span class="month">Nov</span>
 </time>
   </header>
   <div class="entry-content">
     
-      <blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
-<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
-<p><div class="ct-chart"></div></p>
-<script>
-new Chartist.Line('.ct-chart', {
-  labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-  series: [
-    [12, 9, 7, 8, 5],
-    [2, 1, 3.5, 7, 3],
-    [1, 3, 4, 5, 6]
-  ]
-}, {
-  fullWidth: true,
-  chartPadding: {
-    right: 40
-  }
-});
+      <blockquote><p>В обществе векторов существуют особые представители, которые обладают внутренним стержнем и не желают изменять себе в трудные минуты.</p>
+<footer><strong>@mathprofi</strong><cite><a href="https://www.mathprofi.ru" target="_blank" rel="external">www.mathprofi.ru</a></cite></footer></blockquote>
+<p>Собственным вектор матрицы $A$ называется вектор, который при умножении которого на матрицу $A$ получаем коллинеарный вектор, т.е. тот же вектор, умноженный на некоторое число $\beta$, которое называют собственным числом. Обозначив собственный вектор за $x$ получаем :<br>$$ Ax=\beta x$$<br>Рассмотрим пример.<br>$$Ax=\begin{vmatrix}<br>            -1 &amp; -6 \\<br>            2 &amp; 6<br>        \end{vmatrix}<br> \cdot<br>        \begin{vmatrix}<br>            2  \\<br>            1<br>        \end{vmatrix}<br>=<br>    \begin{vmatrix}<br>            4  \\<br>            -2<br>    \end{vmatrix}<br>= 2 \cdot<br>    \begin{vmatrix}<br>            2  \\<br>            -1<br>    \end{vmatrix}$$     </p>
+<p>Здесь вектор $\begin{vmatrix}<br>            2  \\<br>            -1<br>    \end{vmatrix}$ - собственный вектор, а 2 - собственное число матрицы $A$.</p>
 
-</script>
-
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">X=ss(A,b,c,<span class="number">0</span>);</div><div class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">10</span></div><div class="line">	<span class="built_in">disp</span>(<span class="built_in">i</span>);</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
     
     
     <footer class="meta">
       
-  <div class="cats">
-<a href="/categories/математика/">математика</a></div>
-
       
   <div class="tags">
-<a href="/tags/matlab/">matlab</a><a href="/tags/plot/">plot</a><a href="/tags/пространство-состояний/">пространство состояний</a></div>
+<a href="/tags/matlab/">matlab</a><a href="/tags/математика/">математика</a><a href="/tags/матрицы/">матрицы</a></div>
 
       
     </footer>
