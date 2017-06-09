@@ -157,7 +157,6 @@
                 dataType: "json",
                 url: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude.toFixed(2) + ',' + longitude.toFixed(2) + '&sensor=true&lang=ru',
                 success: function(result) {
-                    console.log(result["results"][1]['address_components'][1]['long_name']);
                     $('#cityName').html(result["results"][1]['address_components'][1]['long_name'].toUpperCase());
                     var curretnDate = new Date;
                     $('#currentDate').html(fullDate(curretnDate) + '.' +fullMonth(curretnDate) + '.' + curretnDate.getFullYear());
@@ -173,7 +172,7 @@
                 url: 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/45d2d76301afff89b000c01f75ab6535/' + latitude.toFixed(2) + ',' + longitude.toFixed(2) + '?exclude=minutely,hourly,flags&lang=ru&units=si',
                 success: function(result) {
                     console.log(result);
-                    var large ="\<div class=\"col-sm-7 col-xs-7 verticalAlignMiddle\"> \<i class=\"wi wi-"+day+"-"+result['currently']['icon']+"\" id=\"currentWeatherIcon\">\</i>\</div\>\<div class=\"col-sm-5 col-xs-5 verticalAlignMiddle\" id=\"weatherInfo\"\>\<p id=\"currentTemp\">"+result['currently']['temperature'].toFixed(0)+" \<i class=\"wi wi-degrees\">\</i>C\</p\>\<p>\<i class=\"wi wi-wind from-"+result['currently']['windBearing']+"-deg\">\</i> "+Math.floor(result['currently']['windSpeed'])+"  м/с\</p\>\<p>\<i class=\"wi wi-humidity\">\</i> "+(result['currently']['precipProbability']*100).toFixed(0)+"%\</p\>\</div>"
+                    var large ="\<div class=\"col-sm-7 col-xs-7 verticalAlignMiddle\"> \<i class=\"wi "+selectIcon(result['currently']['icon'],false)+"\" id=\"currentWeatherIcon\">\</i>\</div\>\<div class=\"col-sm-5 col-xs-5 verticalAlignMiddle\" id=\"weatherInfo\"\>\<p id=\"currentTemp\">"+result['currently']['temperature'].toFixed(0)+" \<i class=\"wi wi-degrees\">\</i>C\</p\>\<p>\<i class=\"wi wi-wind from-"+result['currently']['windBearing']+"-deg\">\</i> "+Math.floor(result['currently']['windSpeed'])+"  м/с\</p\>\<p>\<i class=\"wi wi-humidity\">\</i> "+(result['currently']['precipProbability']*100).toFixed(0)+"%\</p\>\</div>"
                     $('#mainInfo').html(large);
                     nextDayFill('first',result['daily']['data'][1]);
                     nextDayFill('second',result['daily']['data'][2]);
@@ -225,9 +224,110 @@
            $('#'+ id +'DayDate').html(fullDate(date)+'.'+fullMonth(date));
            if (data["icon"]== 'partly-cloudy-night')
            data['icon']='cloud';
-           $('#'+ id +'DayIcon').html('\<i class="wi wi-'+data["icon"]+'">\</i>');
+           $('#'+ id +'DayIcon').html('\<i class="wi '+selectIcon(data["icon"],true)+'">\</i>');
             $('#'+ id +'DayTemp').html(Math.floor(data['temperatureMax'])+'/'+Math.floor(data['temperatureMin']));
         }
+
+    function selectIcon(icon,next){
+           var curretnDate = new Date;
+             if(curretnDate.getHours()<21 && curretnDate.getHours()>6 || next==true){
+                        var day =true;
+                    }
+                    else{var day=false};
+
+        switch(icon) {
+    case "clear-day":
+        return "wi-day-sunny"
+        break;
+    case "clear-night":
+        return "wi-night-clear";
+        break;
+    case "rain":
+        if(day){
+            return "wi-day-rain";
+            break;
+        }
+        else{
+            return "wi-night-alt-rain";
+            break;
+        }
+        break;
+    case "snow":
+        if(day){
+            return "wi-day-snow";
+            break;
+        }
+        else{
+            return "wi-night-alt-snow-wind";
+            break;
+        }
+        break;
+    case "sleet":
+        if(day){
+            return "wi-day-sleet";
+            break;
+        }
+        else{
+            return "wi-night-alt-sleet";
+            break;
+        }
+        break;
+    case "wind":
+        if(day){
+            return "wi-day-windy";
+            break;
+        }
+        else{
+            return "wi-night-cloudy-gusts";
+            break;
+        }
+        break;
+    case "fog":
+        if(day){
+            return "wi-day-fog";
+            break;
+        }
+        else{
+            return "wi-night-fog";
+            break;
+        }
+    case "cloud":
+        if(day){
+            return "wi-day-cloudy";
+            break;
+        }
+        else{
+            return "wi-night-alt-cloudy";
+            break;
+        }
+    case "partly-cloudy-day":
+
+     if(day){
+            return "wi-day-cloudy-high";
+            break;
+        }
+        else{
+            return "wi-night-alt-cloudy-high";
+            break;
+        }
+        break;
+
+    case "partly-cloudy-night":
+          
+     if(day){
+            return "wi-day-cloudy-high";
+            break;
+        }
+        else{
+            return "wi-night-alt-cloudy-high";
+            break;
+        }
+        break;
+    default:
+         return "wi-na";
+} 
+
+    }
     </script>
     <!-- Yandex.Metrika counter -->
     <!-- /Yandex.Metrika counter -->
