@@ -152,6 +152,7 @@
 
 
         function getPlace(latitude, longitude) {
+               var day='day';
             $.ajax({
                 dataType: "json",
                 url: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude.toFixed(2) + ',' + longitude.toFixed(2) + '&sensor=true&lang=ru',
@@ -161,7 +162,7 @@
                     var curretnDate = new Date;
                     $('#currentDate').html(fullDate(curretnDate) + '.' +fullMonth(curretnDate) + '.' + curretnDate.getFullYear());
                     $('#currentTime').html(curretnDate.getHours() + ':' + fullMinutes(curretnDate));
-                    var day='day';
+                 
                     if(curretnDate.getHours()<21 && curretnDate.getHours()>6){
                         day ='day';
                     }
@@ -174,6 +175,7 @@
             });
             $.ajax({
                 dataType: "json",
+                async: false,
                 url: 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/45d2d76301afff89b000c01f75ab6535/' + latitude.toFixed(2) + ',' + longitude.toFixed(2) + '?exclude=minutely,hourly,flags&lang=ru&units=si',
                 success: function(result) {
                     console.log(result);
