@@ -173,7 +173,7 @@
                 url: 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/45d2d76301afff89b000c01f75ab6535/' + latitude.toFixed(2) + ',' + longitude.toFixed(2) + '?exclude=minutely,hourly,flags&lang=ru&units=si',
                 success: function(result) {
                     console.log(result);
-                    var large ="\<div class=\"col-sm-7 col-xs-7 verticalAlignMiddle\"> \<i class=\"wi wi-"+day+"-"+result['currently']['icon']+"\" id=\"currentWeatherIcon\">\</i>\</div\>\<div class=\"col-sm-5 col-xs-5 verticalAlignMiddle\" id=\"weatherInfo\"\>\<p id=\"currentTemp\">"+result['currently']['temperature'].toFixed(0)+" \<i class=\"wi wi-degrees\">\</i>C\</p\>\<p>\<i class=\"wi wi-wind from-"+result['currently']['windBearing']+"-deg\">\</i> "+result['currently']['windSpeed'].toFixed(0)+"  м/с\</p\>\<p>\<i class=\"wi wi-humidity\">\</i> "+result['currently']['precipProbability']*100+"%\</p\>\</div>"
+                    var large ="\<div class=\"col-sm-7 col-xs-7 verticalAlignMiddle\"> \<i class=\"wi wi-"+day+"-"+result['currently']['icon']+"\" id=\"currentWeatherIcon\">\</i>\</div\>\<div class=\"col-sm-5 col-xs-5 verticalAlignMiddle\" id=\"weatherInfo\"\>\<p id=\"currentTemp\">"+result['currently']['temperature'].toFixed(0)+" \<i class=\"wi wi-degrees\">\</i>C\</p\>\<p>\<i class=\"wi wi-wind from-"+result['currently']['windBearing']+"-deg\">\</i> "+Math.floor(result['currently']['windSpeed'])+"  м/с\</p\>\<p>\<i class=\"wi wi-humidity\">\</i> "+(result['currently']['precipProbability']*100).toFixed(0)+"%\</p\>\</div>"
                     $('#mainInfo').html(large);
                     nextDayFill('first',result['daily']['data'][1]);
                     nextDayFill('second',result['daily']['data'][2]);
