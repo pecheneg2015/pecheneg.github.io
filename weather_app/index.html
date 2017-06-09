@@ -226,6 +226,7 @@
            if (data["icon"]== 'partly-cloudy-night')
            data['icon']='cloud';
            $('#'+ id +'DayIcon').html('\<i class="wi wi-'+data["icon"]+'">\</i>');
+            $('#'+ id +'DayTemp').html(Math.floor(data['temperatureMax'])+'/'+Math.floor(data['temperatureMin']));
         }
     </script>
     <!-- Yandex.Metrika counter -->
