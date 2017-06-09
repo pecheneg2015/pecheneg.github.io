@@ -1,0 +1,578 @@
+*::-webkit-input-placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+*:-moz-placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+*::-moz-placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+*:-ms-input-placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {}
+
+body input:required:valid,
+body textarea:required:valid {}
+
+body {
+    font-family: "RobotoRegular", sans-serif;
+    font-size: 16px;
+    min-width: 320px;
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: 50% 0;
+    position: relative;
+}
+
+body,
+html {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Kelly Slab', cursive;
+}
+
+.displayBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /*  background-image: url('../img/background.jpg');
+    background-repeat: none;
+    background-size: 100% 100%;*/
+}
+
+.square {
+    position: relative;
+    width: 50%;
+    min-height: 300px;
+    min-width: 300px;
+    max-width: 500px;
+    max-height: 500px;
+    border-radius: 5%;
+    background: black;
+    border: 2px solid rgb(0, 128, 220, 0.8);
+    background-color: rgba(0, 128, 220, 0.4);
+    -webkit-box-shadow: 10px 10px 8px -4px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 10px 10px 8px -4px rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 8px -4px rgba(0, 0, 0, 0.5);
+}
+
+.square:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.content {
+    padding: 5%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.content * {
+    opacity: 1;
+    color: white
+}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative
+}
+
+.content1 {
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: bold;
+    position: relative;
+    z-index: 100;
+    height: 100%;
+    width: 100%
+}
+
+.background {
+    position: absolute;
+    color: #999999;
+    top: 0;
+    right: 0;
+    z-index: -100;
+}
+
+.verticalAlignMiddle {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.whiteLine {
+    border-top: 1px solid white
+}
+
+
+/*Lets start with the cloud formation rather*/
+
+#clouds {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 100px 0;
+    background: #00b4ff;
+    background: -webkit-linear-gradient(top, #00b4ff 0%, #fff 100%);
+    background: -linear-gradient(top, #00b4ff 0%, #fff 100%);
+    background: -moz-linear-gradient(top, #00b4ff 0%, #fff 100%);
+}
+
+
+/*Time to finalise the cloud shape*/
+
+.cloud {
+    width: 200px;
+    height: 60px;
+    background: #fff;
+    border-radius: 200px;
+    -moz-border-radius: 200px;
+    -webkit-border-radius: 200px;
+    position: relative;
+}
+
+.cloud:before,
+.cloud:after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+    width: 120px;
+    height: 120px;
+    top: -55px;
+    left: auto;
+    right: 15px;
+}
+
+
+/*Time to animate*/
+
+.x1 {
+    right: 0px;
+    -webkit-animation: moveclouds 70s linear infinite;
+    -moz-animation: moveclouds 70s linear infinite;
+    -o-animation: moveclouds 70s linear infinite;
+}
+
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+
+.x2 {
+    left: 10%;
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 0.6;
+    /*opacity proportional to the size*/
+    /*Speed will also be proportional to the size and opacity*/
+    /*More the speed. Less the time in 's' = seconds*/
+    -webkit-animation: moveclouds2 28s linear infinite;
+    -moz-animation: moveclouds2 28s linear infinite;
+    -o-animation: moveclouds2 28s linear infinite;
+}
+
+.x3 {
+    left: -10%;
+    top: 15%;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.8;
+    /*opacity proportional to the size*/
+    -webkit-animation: moveclouds2 45s linear infinite;
+    -moz-animation: moveclouds2 45s linear infinite;
+    -o-animation: moveclouds2 45s linear infinite;
+}
+
+.x4 {
+    left: 30%;
+    top: 7%;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+    opacity: 0.75;
+    /*opacity proportional to the size*/
+    -webkit-animation: moveclouds2 40s linear infinite;
+    -moz-animation: moveclouds2 40s linear infinite;
+    -o-animation: moveclouds2 40s linear infinite;
+}
+
+.x5 {
+    left: -25%;
+    top: -20%;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.8;
+    /*opacity proportional to the size*/
+    -webkit-animation: moveclouds3 60s linear infinite;
+    -moz-animation: moveclouds3 60s linear infinite;
+    -o-animation: moveclouds3 60s linear infinite;
+}
+
+.x6 {
+    left: -35%;
+    top: -5%;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.8;
+    /*opacity proportional to the size*/
+    -webkit-animation: moveclouds3 70s linear infinite;
+    -moz-animation: moveclouds3 70s linear infinite;
+    -o-animation: moveclouds3 70s linear infinite;
+}
+
+.x7 {
+    left: -45%;
+    top: -10%;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+    opacity: 0.75;
+    /*opacity proportional to the size*/
+    -webkit-animation: moveclouds3 54s linear infinite;
+    -moz-animation: moveclouds3 54s linear infinite;
+    -o-animation: moveclouds3 54s linear infinite;
+}
+
+.x8 {
+    left: -50%;
+    top: 30%;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.8;
+    /*opacity proportional to the size*/
+    -webkit-animation: moveclouds3 60s linear infinite;
+    -moz-animation: moveclouds3 60s linear infinite;
+    -o-animation: moveclouds3 60s linear infinite;
+}
+
+.x9 {
+    left: -40%;
+    top: -14%;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.8;
+    /*opacity proportional to the size*/
+    -webkit-animation: moveclouds3 60s linear infinite;
+    -moz-animation: moveclouds3 60s linear infinite;
+    -o-animation: moveclouds3 60s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+    0% {
+        margin-left: 120%;
+    }
+    100% {
+        margin-left: -20%;
+    }
+}
+
+@-moz-keyframes moveclouds {
+    0% {
+        margin-left: 120%;
+    }
+    100% {
+        margin-left: -20%;
+    }
+}
+
+@-o-keyframes moveclouds {
+    0% {
+        margin-left: 120%;
+    }
+    100% {
+        margin-left: -20%;
+    }
+}
+
+@-webkit-keyframes moveclouds2 {
+    0% {
+        margin-left: 150%;
+    }
+    100% {
+        margin-left: -50%;
+    }
+}
+
+@-moz-keyframes moveclouds2 {
+    0% {
+        margin-left: 150%;
+    }
+    100% {
+        margin-left: -50%;
+    }
+}
+
+@-o-keyframes moveclouds2 {
+    0% {
+        margin-left: 150%;
+    }
+    100% {
+        margin-left: -50%;
+    }
+}
+
+@-webkit-keyframes moveclouds3 {
+    0% {
+        margin-left: 200%;
+    }
+    100% {
+        margin-left: -100%;
+    }
+}
+
+@-moz-keyframes moveclouds3 {
+    0% {
+        margin-left: 200%;
+    }
+    100% {
+        margin-left: -100%;
+    }
+}
+
+@-o-keyframes moveclouds3 {
+    0% {
+        margin-left: 200%;
+    }
+    100% {
+        margin-left: -100%;
+    }
+}
+
+#cityName {
+    margin-top: 3%;
+    margin-bottom: 0px;
+    font-family: 'Kelly Slab', cursive;
+    font-size: 22px;
+}
+
+#dateTimeHeader {
+    margin-top: 3%;
+    margin-bottom: 0px;
+}
+
+#dateTimeHeader span {
+    font-family: 'Kelly Slab', cursive;
+    float: right;
+    text-align: right;
+    font-size: 16px;
+}
+
+#mainInfo {
+    height: 60%
+}
+
+#currentWeatherIcon {
+    font-size: 125px
+}
+
+#currentTemp {
+    font-size: 60px;
+}
+
+#weatherInfo p {
+    font-family: 'Kelly Slab', cursive;
+    font-size: 25px;
+    margin: 0 auto
+}
+
+#weatherInfo p:first-child {
+    font-size: 60px
+}
+
+#weatherInfo i {
+    font-size: 30px;
+}
+
+#currentTemp i {
+    font-size: 70px
+}
+
+.nextWeather span {
+    font-family: 'Kelly Slab', cursive;
+    margin-bottom: 0px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 2%
+}
+
+.nextWeather i {
+    font-size: 30px;
+}
+
+.nextWeather p {
+    font-family: 'Kelly Slab', cursive;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center
+}
+
+@media only screen and (max-width: 992px) {
+    #currentWeatherIcon {
+        font-size: 90px
+    }
+    #currentTemp {
+        font-size: 45px;
+    }
+    #weatherInfo p {
+        font-family: 'Kelly Slab', cursive;
+        font-size: 18px;
+        margin: 0 auto
+    }
+    #weatherInfo p:first-child {
+        font-size: 45px
+    }
+    #weatherInfo i {
+        font-size: 20px;
+    }
+    #currentTemp i {
+        font-size: 45px
+    }
+    .nextWeather span {
+        font-family: 'Kelly Slab', cursive;
+        margin-bottom: 0px;
+        font-size: 18px;
+        text-align: center;
+        margin-top: 2%
+    }
+    .nextWeather i {
+        font-size: 25px;
+    }
+    .nextWeather p {
+        font-family: 'Kelly Slab', cursive;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 18px;
+        text-align: center
+    }
+    .nextWeather {
+        margin-top: -10px
+    }
+    #lastLine {
+        margin-top: -20px;
+    }
+}
+    .nextWeather {
+        margin-top: -10px
+    }
+    #lastLine {
+        margin-top: -20px;
+    }
+
+
+@media only screen and (max-width: 768px) {
+    #cityName {
+        margin-top: 3%;
+        margin-bottom: 0px;
+        font-family: 'Kelly Slab', cursive;
+        font-size: 22px;
+        text-align: center
+    }
+    #dateTimeHeader {
+        margin-top: 3%;
+        margin-bottom: 0px;
+    }
+    #dateTimeHeader span {
+        font-family: 'Kelly Slab', cursive;
+        float: right;
+        text-align: center;
+        font-size: 16px;
+    }
+    #mainInfo {
+        height: 50%
+    }
+    #currentWeatherIcon {
+        font-size: 60px
+    }
+    #currentTemp {
+        font-size: 16px;
+    }
+    #weatherInfo p {
+        font-family: 'Kelly Slab', cursive;
+        font-size: 16px;
+        margin: 0 auto
+    }
+    #weatherInfo p:first-child {
+        font-size: 20px
+    }
+    #weatherInfo i {
+        font-size: 20px;
+    }
+    #currentTemp i {
+        font-size: 20px
+    }
+    .nextWeather {
+        margin-top: -5px
+    }
+    .nextWeather span {
+        font-family: 'Kelly Slab', cursive;
+        margin-bottom: 0px;
+        font-size: 16px;
+        text-align: center;
+        margin-top: 2%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .nextWeather i {
+        font-size: 20px;
+        text-align: center;
+    }
+    .nextWeather p {
+        text-align: center;
+        font-family: 'Kelly Slab', cursive;
+        margin-bottom: 0px;
+        font-size: 14px;
+        text-align: center
+    }
+    .whiteLine:last-of-type {
+        margin-top: -10px
+    }
+    #lastLine {
+        margin-top: -10px;
+    }
+}

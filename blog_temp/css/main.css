@@ -1,0 +1,316 @@
+    *::-webkit-input-placeholder {
+        color: #666;
+        opacity: 1;
+    }
+    
+    *:-moz-placeholder {
+        color: #666;
+        opacity: 1;
+    }
+    
+    *::-moz-placeholder {
+        color: #666;
+        opacity: 1;
+    }
+    
+    *:-ms-input-placeholder {
+        color: #666;
+        opacity: 1;
+    }
+    
+    body input:focus:required:invalid,
+    body textarea:focus:required:invalid {}
+    
+    body input:required:valid,
+    body textarea:required:valid {}
+    
+    body {
+        font-family: "RobotoRegular", sans-serif;
+        font-size: 16px;
+        min-width: 320px;
+        position: relative;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .carousel img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .parallax {
+        background-attachment: fixed;
+        background-position: 50% 0;
+        position: relative;
+    }
+    
+    .verticalAlignMiddle {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    header {
+        background-image: url('../img/header_bg.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: rgb(53, 53, 53, 0.5);
+        height: 770px;
+        -webkit-box-shadow: inset 0 -250px 350px -250px rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0 -250px 350px -250px rgba(0, 0, 0, 0.5)
+    }
+    
+    .outer {
+        position: relative;
+        min-height: 100%;
+    }
+    
+    .inner {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    
+    header h3 {
+        font-family: 'Gentium Book Basic', serif;
+        font-size: 46px;
+        color: white;
+        margin: 0;
+    }
+    
+    header h4 {
+        font-family: 'Gentium Book Basic', serif;
+        font-style: italic;
+        font-size: 24px;
+        color: #d7d7d7;
+        margin: 0;
+    }
+    
+    .greyLine {
+        width: 100%;
+        border-top: 1px #d7d7d7 solid;
+        height: 1px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    
+    #written {
+        color: #d7d7d7;
+        font-size: 14px;
+    }
+    
+    header p {
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        float: left;
+    }
+    
+    header img {
+        float: left;
+        margin-left: 10px;
+        border-radius: 50%;
+        margin-top: 22px
+    }
+    
+    #icons {
+        float: right;
+        margin-top: 40px
+    }
+    
+    #icons i {
+        padding: 5px;
+    }
+    
+    @media screen and (min-width:1400px) {
+        header {
+            background-size: 100% 100%;
+        }
+    }
+    
+    @media screen and (max-width:768px) {
+        #written {
+            font-size: 12px;
+        }
+        header p {
+            font-size: 14px;
+        }
+        header img {
+            margin-top: 16px
+        }
+        #icons {
+            float: none;
+            margin-top: 25px
+        }
+    }
+    
+    .commonText p {
+        color: black;
+        font-family: 'Gentium Book Basic', serif;
+        font-size: 16px;
+        text-align: justify;
+        word-wrap: break-word;
+    }
+    
+    #linesTitle,
+    #lines {
+        font-family: 'Gentium Book Basic', serif;
+        font-style: italic;
+        font-size: 14px;
+        color: #d7d7d7;
+        margin: 0;
+        text-align: center;
+    }
+    
+    #linesTitle {
+        margin-top: 1px;
+    }
+    
+    #lines {
+        margin-top: -5px;
+        font-size: 16px;
+    }
+    
+    #footer {
+        margin: 0 0;
+        padding: 0 0;
+        background-image: url('../img/bg_footer.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        height: 200px;
+        margin-top: 50px
+    }
+    
+    #footer a {
+        display: block;
+        margin: auto;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        float: none;
+        color: #2ecc71;
+        font-size: 16px;
+        border: 2px solid #2ecc71;
+        border-radius: 25px;
+        padding: 10px 20px;
+        width: 250px
+    }
+    
+    .btn2 {
+        position: relative;
+        font-family: helvetica;
+        font-size: inherit;
+        color: inherit;
+        background: none;
+        cursor: pointer;
+        padding: 25px 80px;
+        display: inline-block;
+        margin: 15px 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        outline: none;
+        position: relative;
+        border: 3px solid #fff;
+        color: #fff;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    
+    .btn2 {
+        overflow: hidden;
+    }
+    
+    .btn2:after {
+        width: 150%;
+        height: 0;
+        top: 0%;
+        z-index: -1;
+        position: absolute;
+        content: '';
+        left: 40%;
+        background: #fff;
+        opacity: 0;
+        -webkit-transform: translateX(-50%) translateY(-50%) rotate(38deg);
+        transform: translateX(-50%) translateY(-50%) rotate(38deg);
+        transition: all 0.6s;
+    }
+    
+    .btn2:hover {
+        color: #cb4e4e;
+    }
+    
+    .btn2:hover:after {
+        height: 400%;
+        opacity: 1;
+        opacity-background: #fff;
+    }
+    
+    .post1,
+    .post2 {
+        float: left;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        min-height: 350px;
+    }
+    
+    .post1 {
+        background-image: url('../img/post1.png');
+    }
+    
+    .post2 {
+        background-image: url('../img/post2.png');
+    }
+    
+    .post1 p,
+    .post2 p {
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        padding-top: 5%;
+    }
+    
+    .post1 h3,
+    .post2 h3 {
+        font-family: 'Gentium Book Basic', serif;
+        font-size: 46px;
+        color: white;
+        margin: 0;
+        margin-top: 10%;
+    }
+    
+    .post1 h4,
+    .post2 h4 {
+        font-family: 'Gentium Book Basic', serif;
+        font-style: italic;
+        font-size: 24px;
+        color: #d7d7d7;
+        margin: 0;
+    }
+    
+    .post1 * {
+        padding-left: 10%;
+    }
+    
+    .post2 * {
+        padding-left: 10%;
+    }
+    
+    #backToTopButton {
+        text-align: center;
+        color: #afafaf
+    }
+    
+    #backToTopButton:hover {
+        color: black;
+        -webkit-transition: color 0.5s ease-out;
+        -moz-transition: color 0.5s ease-out;
+        -o-transition: color 0.5s ease-out;
+        transition: color 0.5s ease-out;
+    }

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="ru">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Заголовок</title>
+    <meta content="" name="description" />
+    <meta content="" property="og:image" />
+    <meta content="" property="og:description" />
+    <meta content="" property="og:site_name" />
+    <meta content="website" property="og:type" />
+
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="x-rim-auto-match" content="none">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Kelly+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="libs/bootstrap/bootstrap-grid-3.3.1.min.css" />
+    <link rel="stylesheet" href="libs/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.css" />
+    <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" href="libs/countdown/jquery.countdown.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/media.css" />
+
+    <link rel="stylesheet" href="weather-icons-master/css/weather-icons.min.css">
+    <link rel="stylesheet" href="weather-icons-master/css/weather-icons-wind.min.css">
+</head>
+
+<body>
+    <section style="width:100%;height:100%">
+        <div id="wrapper">
+            <div class="content1">
+                <div class="displayBlock">
+                    <div class="square">
+                        <div class="content">
+                            <div style="width:100%;" class="col-sm-12 col-xs-12">
+                                <p class="col-sm-9 col-xs-12 verticalAlignMiddle" id="cityName">МОСКВА
+                                </p>
+                                <p class="verticalAlignMiddle col-sm-3 col-xs-12" id="dateTimeHeader">
+                                    <span class="col-sm-12 col-xs-7" id="currentDate">1.1.1971</span>
+                                    <span class="col-sm-12 col-xs-5" id="currentTime">0:00</span>
+                                </p>
+
+                            </div>
+                            <div class="col-sm-12 col-xs-12 whiteLine"></div>
+                            <div class="col-sm-12  col-xs-12" id="mainInfo">
+                                <div class="col-sm-7 col-xs-7 verticalAlignMiddle">
+                                     <i class="wi wi-day-rain" id="currentWeatherIcon"></i>
+                                </div>
+                                <div class="col-sm-5 col-xs-5 verticalAlignMiddle" id="weatherInfo">
+                                    <p id="currentTemp">22 <i class="wi wi-degrees"></i>C</p>
+                                    <p><i class="wi wi-wind from-120-deg"></i> 5 м/с</p>
+                                    <p><i class="wi wi-humidity"></i> 72%</p>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-12 col-xs-12 whiteLine" id="lastLine"></div>
+                            <div class="col-sm-12 col-xs-12 nextWeather">
+                                <div class="col-sm-4 col-xs-4">
+                                    <span class="col-sm-12 col-xs-12" id="firstDayDate">10.06</span>
+                                    <p class="col-sm-12  col-xs-12"  id="firstDayIcon"><i class="wi wi-day-rain"></i></p>
+                                    <p id="firstDayTemp">22/8 <i class="wi wi-degrees"></i>C</p>
+                                </div>
+                                <div class="col-sm-4 col-xs-4" style="border-left:1px solid white;border-right:1px solid white;line-width:80%;">
+                                    <span class="col-sm-12  col-xs-12" id="secondDayDate">11.06</span>
+                                    <p class="col-sm-12  col-xs-12" id="secondDayIcon"><i class="wi wi-day-rain"></i></p>
+                                    <p  id="secondDayTemp">22/8 <i class="wi wi-degrees"></i>C</p>
+                                </div>
+                                <div class="col-sm-4 col-xs-4">
+                                    <span class="col-sm-12 col-xs-12"  id="thirdDayDate">12.06</span>
+                                    <p class="col-sm-12  col-xs-12" id="thirdDayIcon"><i class="wi wi-day-rain"></i></p>
+                                    <p id="thirdDayTemp">22/8 <i class="wi wi-degrees"></i>C</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="background" style="width:100%;height:100%">
+                <div id="clouds" style="position:absolute">
+                    <div class="cloud x1"></div>
+                    <!-- Time for multiple clouds to dance around -->
+                    <div class="cloud x2"></div>
+                    <div class="cloud x3"></div>
+                    <div class="cloud x4"></div>
+                    <div class="cloud x5"></div>
+                    <div class="cloud x6"></div>
+                    <div class="cloud x7"></div>
+                    <div class="cloud x8"></div>
+                    <div class="cloud x9"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+    <script src="libs/jquery/jquery-1.11.1.min.js"></script>
+    <script src="libs/jquery-mousewheel/jquery.mousewheel.min.js"></script>
+    <script src="libs/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="libs/waypoints/waypoints-1.6.2.min.js"></script>
+    <script src="libs/scrollto/jquery.scrollTo.min.js"></script>
+    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="libs/countdown/jquery.plugin.js"></script>
+    <script src="libs/countdown/jquery.countdown.min.js"></script>
+    <script src="libs/countdown/jquery.countdown-ru.js"></script>
+    <script src="libs/landing-nav/navigation.js"></script>
+    <script src="libs/bootstrap-toolkit/bootstrap-toolkit.min.js"></script>
+    <script src="libs/maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="libs/equalheight/jquery.equalheight.js"></script>
+    <script src="libs/stellar/jquery.stellar.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        var latitude = 0;
+        var longitude = 0;
+        $(document).ready(function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(handleGetCurrentPosition, getIpCoords);
+            }
+        });
+
+        function handleGetCurrentPosition(location) {
+            latitude = location.coords.latitude;
+            longitude = location.coords.longitude;
+            getPlace(latitude, longitude)
+        }
+        // Запрос погоды https://api.darksky.net/forecast/45d2d76301afff89b000c01f75ab6535/59.8589,30.236?exclude=minutely,hourly,flags&lang=ru&units=si
+        //http://maps.googleapis.com/maps/api/geocode/json?latlng=60.389960,%2039.593031&sensor=true&lang=ru
+        function getIpCoords() {
+            $.getJSON("https://cors-anywhere.herokuapp.com/https://freegeoip.net/json/", function(data) {
+                latitude = data.latitude;
+                longitude = data.longitude;
+                getPlace(latitude, longitude)
+            });
+        }
+
+
+        function getPlace(latitude, longitude) {
+               var day='day';
+            $.ajax({
+                dataType: "json",
+                url: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude.toFixed(2) + ',' + longitude.toFixed(2) + '&sensor=true&lang=ru',
+                success: function(result) {
+                    console.log(result["results"][1]['address_components'][1]['long_name']);
+                    $('#cityName').html(result["results"][1]['address_components'][1]['long_name'].toUpperCase());
+                    var curretnDate = new Date;
+                    $('#currentDate').html(fullDate(curretnDate) + '.' +fullMonth(curretnDate) + '.' + curretnDate.getFullYear());
+                    $('#currentTime').html(curretnDate.getHours() + ':' + fullMinutes(curretnDate));
+                 
+                    if(curretnDate.getHours()<21 && curretnDate.getHours()>6){
+                        day ='day';
+                    }
+                    else{day='night'};
+            $.ajax({
+                dataType: "json",
+                async: false,
+                url: 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/45d2d76301afff89b000c01f75ab6535/' + latitude.toFixed(2) + ',' + longitude.toFixed(2) + '?exclude=minutely,hourly,flags&lang=ru&units=si',
+                success: function(result) {
+                    console.log(result);
+                    var large ="\<div class=\"col-sm-7 col-xs-7 verticalAlignMiddle\"> \<i class=\"wi wi-"+day+"-"+result['currently']['icon']+"\" id=\"currentWeatherIcon\">\</i>\</div\>\<div class=\"col-sm-5 col-xs-5 verticalAlignMiddle\" id=\"weatherInfo\"\>\<p id=\"currentTemp\">"+result['currently']['temperature'].toFixed(0)+" \<i class=\"wi wi-degrees\">\</i>C\</p\>\<p>\<i class=\"wi wi-wind from-"+result['currently']['windBearing']+"-deg\">\</i> "+Math.floor(result['currently']['windSpeed'])+"  м/с\</p\>\<p>\<i class=\"wi wi-humidity\">\</i> "+(result['currently']['precipProbability']*100).toFixed(0)+"%\</p\>\</div>"
+                    $('#mainInfo').html(large);
+                    nextDayFill('first',result['daily']['data'][1]);
+                    nextDayFill('second',result['daily']['data'][2]);
+                    nextDayFill('third',result['daily']['data'][3]);
+                },
+                error: function(result) {
+                    console.log("Беда(((");
+                }
+            });
+                },
+                error: function(result) {
+                    console.log("Беда(((");
+                }
+            });
+
+        }
+
+
+        function fullDate( curretnDate){
+              if(curretnDate.getDate()<10){
+                  return '0'+curretnDate.getDate();
+              }else
+              {             
+                  return curretnDate.getDate();
+              }
+        }
+
+      function fullMonth( curretnDate){
+              if(curretnDate.getMonth()+1<10){
+                  return '0'+(curretnDate.getMonth()+1);
+              }else
+              {             
+                  return curretnDate.getMonth()+1;
+              }
+        }
+
+        
+      function fullMinutes( curretnDate){
+              if(curretnDate.getMinutes()<10){
+                  return '0'+(curretnDate.getMinutes());
+              }else
+              {             
+                  return curretnDate.getMinutes();
+              }
+        }
+
+     function nextDayFill(id,data){
+           var date = new Date(data['time']*1000);10.06
+           $('#'+ id +'DayDate').html(fullDate(date)+'.'+fullMonth(date));
+           if (data["icon"]== 'partly-cloudy-night')
+           data['icon']='cloud';
+           $('#'+ id +'DayIcon').html('\<i class="wi wi-'+data["icon"]+'">\</i>');
+        }
+    </script>
+    <!-- Yandex.Metrika counter -->
+    <!-- /Yandex.Metrika counter -->
+    <!-- Google Analytics counter -->
+    <!-- /Google Analytics counter -->
+</body>
+
+</html>
