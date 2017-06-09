@@ -143,7 +143,7 @@
         // Запрос погоды https://api.darksky.net/forecast/45d2d76301afff89b000c01f75ab6535/59.8589,30.236?exclude=minutely,hourly,flags&lang=ru&units=si
         //http://maps.googleapis.com/maps/api/geocode/json?latlng=60.389960,%2039.593031&sensor=true&lang=ru
         function getIpCoords() {
-            $.getJSON("https://cors-anywhere.herokuapp.com/http://freegeoip.net/json/", function(data) {
+            $.getJSON("https://cors-anywhere.herokuapp.com/https://freegeoip.net/json/", function(data) {
                 latitude = data.latitude;
                 longitude = data.longitude;
                 getPlace(latitude, longitude)
