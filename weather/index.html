@@ -161,6 +161,7 @@
                     var curretnDate = new Date;
                     $('#currentDate').html(fullDate(curretnDate) + '.' +fullMonth(curretnDate) + '.' + curretnDate.getFullYear());
                     $('#currentTime').html(curretnDate.getHours() + ':' + fullMinutes(curretnDate));
+                    var day='day';
                     if(curretnDate.getHours()<21 && curretnDate.getHours()>6){
                         day ='day';
                     }
