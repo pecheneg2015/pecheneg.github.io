@@ -167,12 +167,6 @@
                         day ='day';
                     }
                     else{day='night'};
-
-                },
-                error: function(result) {
-                    console.log("Беда(((");
-                }
-            });
             $.ajax({
                 dataType: "json",
                 async: false,
@@ -189,6 +183,12 @@
                     console.log("Беда(((");
                 }
             });
+                },
+                error: function(result) {
+                    console.log("Беда(((");
+                }
+            });
+
         }
 
 
