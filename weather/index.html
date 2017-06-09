@@ -154,7 +154,7 @@
         function getPlace(latitude, longitude) {
             $.ajax({
                 dataType: "json",
-                url: 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude.toFixed(2) + ',' + longitude.toFixed(2) + '&sensor=true&lang=ru',
+                url: 'https://cors-anywhere.herokuapp.com/http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude.toFixed(2) + ',' + longitude.toFixed(2) + '&sensor=true&lang=ru',
                 success: function(result) {
                     console.log(result["results"][1]['address_components'][1]['long_name']);
                     $('#cityName').html(result["results"][1]['address_components'][1]['long_name'].toUpperCase());
