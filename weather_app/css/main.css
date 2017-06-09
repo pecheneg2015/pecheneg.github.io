@@ -509,8 +509,8 @@ html {
     #cityName {
         margin-top: 3%;
         margin-bottom: 0px;
-        font-family: 'Kelly Slab', cursive;
-        font-size: 22px;
+        font-family: 'Kelly Slab';
+        font-size: 20px;
         text-align: center
     }
     #dateTimeHeader {
@@ -518,7 +518,7 @@ html {
         margin-bottom: 0px;
     }
     #dateTimeHeader span {
-        font-family: 'Kelly Slab', cursive;
+        font-family: 'Kelly Slab';
         float: right;
         text-align: center;
         font-size: 16px;
@@ -533,7 +533,7 @@ html {
         font-size: 16px;
     }
     #weatherInfo p {
-        font-family: 'Kelly Slab', cursive;
+        font-family: 'Kelly Slab';
         font-size: 16px;
         margin: 0 auto
     }
@@ -550,7 +550,7 @@ html {
         margin-top: -5px
     }
     .nextWeather span {
-        font-family: 'Kelly Slab', cursive;
+        font-family: 'Kelly Slab';
         margin-bottom: 0px;
         font-size: 16px;
         text-align: center;
@@ -564,7 +564,7 @@ html {
     }
     .nextWeather p {
         text-align: center;
-        font-family: 'Kelly Slab', cursive;
+        font-family: 'Kelly Slab';
         margin-bottom: 0px;
         font-size: 14px;
         text-align: center
