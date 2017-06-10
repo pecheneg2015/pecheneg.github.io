@@ -61,7 +61,7 @@
     audio.autoplay = true;
     audio.id = "aud";
     document.body.appendChild(audio);
-    var audioCtx = new (window.AudioContext || window.webkitAudioContext || webkitAudioContext)();
+    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     var analyser = audioCtx.createAnalyser();
     window.addEventListener('load', function(e) {
         var source = audioCtx.createMediaElementSource(audio);
