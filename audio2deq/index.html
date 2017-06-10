@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="ru">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Заголовок</title>
+    <meta content="" name="description" />
+    <meta content="" property="og:image" />
+    <meta content="" property="og:description" />
+    <meta content="" property="og:site_name" />
+    <meta content="website" property="og:type" />
+
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="x-rim-auto-match" content="none">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.png" />
+ 
+    <link rel="stylesheet" href="libs/bootstrap/bootstrap-grid-3.3.1.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    </head>
+
+    <body>
+      <style>
+        html{
+        height: 100%
+        }
+
+    body {
+        min-width: 320px;
+        position: relative;
+        height: 100%;
+        }
+
+    #aud{
+        width:100%;
+        }
+
+    svg{
+        background-color: #484848;
+        margin-top:-5px;
+        border-top: 2px black solid ;
+        width: 100%;
+    }
+    </style>
+
+
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script>
+    var audio = new Audio();
+    audio.src = '3.mp3';
+    audio.controls = true;
+    audio.autoplay = true;
+    audio.id = "aud";
+    document.body.appendChild(audio);
+    var audioCtx = new (window.AudioContext || window.webkitAudioContext || webkitAudioContext)();
+    var analyser = audioCtx.createAnalyser();
+    window.addEventListener('load', function(e) {
+        var source = audioCtx.createMediaElementSource(audio);
+        source.connect(analyser);
+        analyser.connect(audioCtx.destination);
+    }, false);
+    analyser.fftSize = 64;
+    var size = Math.floor(analyser.fftSize/2);
+    var bufferLength = analyser.frequencyBinCount;
+    var dataArray = new Uint8Array(bufferLength);
+
+    var frequencyData = new Uint8Array(size);
+    var svgHeight = d3.select('body').node().getBoundingClientRect().height-d3.select('#aud').node().getBoundingClientRect().height;
+    var svgWidth =  d3.select('body').node().clientWidth;
+    var barPadding = '1';
+
+function createSvg(parent, height, width) {
+  return d3.select(parent).append('svg').attr('height', height).attr('width', width);
+}
+
+var svg = createSvg('body', svgHeight, svgWidth);
+
+// Create our initial D3 chart.
+svg.selectAll('rect')
+   .data(frequencyData)
+   .enter()
+   .append('rect')
+   .attr('x', function (d, i) {
+      return i * (svgWidth / frequencyData.length);
+   })
+   .attr('width', svgWidth / frequencyData.length - barPadding);
+
+// Continuously loop and update chart with frequency data.
+function renderChart() {
+   requestAnimationFrame(renderChart);
+
+   // Copy frequency data to frequencyData array.
+   analyser.getByteFrequencyData(frequencyData);
+
+   // Update d3 chart with new data.
+   svg.selectAll('rect')
+      .data(frequencyData)
+      .attr('y', function(d) {
+         return svgHeight - (0.8*svgHeight*((d+1)/256));
+      })
+      .attr('height', function(d) {
+         return svgHeight;
+      })
+      .attr('fill', function(d,i) {
+         return 'hsl('+(i*(Math.floor(360/16)))%360+',150%,50%,0.7)';
+      });
+}
+
+// Run the loop
+renderChart();
+    </script>
+</body>
+
+</html>
