@@ -20,7 +20,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    
     <link rel="stylesheet" href="libs/bootstrap/bootstrap-grid-3.3.1.min.css" />
     <link rel="stylesheet" href="css/main.css" />
 </head>
@@ -28,8 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js"></script>
     <script src="libs/Mirror.js"></script>
        
-    <script> 
-    'use strict'    
+    <script>     
     /*          СОЗДАЁМ ОБЪЕКТ АУДИО            */
     var audio = new Audio();
     audio.src = '3.mp3';
@@ -39,7 +38,13 @@
     audio.id = "aud";
     document.body.appendChild(audio);
     /*     ВОЗНЯ СО ЗВУКОМ     */
-    var audioCtx = new (AudioContext || webkitAudioContext)();
+     if('webkitAudioContext' in window) {
+          var audioCtx = new webkitAudioContext();
+          fetchSounds();
+     }else{
+        var audioCtx = new AudioContext();
+     }
+    
     var analyser = audioCtx.createAnalyser();
     window.addEventListener('load', function(e) {
         var source = audioCtx.createMediaElementSource(audio);
@@ -71,6 +76,7 @@
         var positionX = 0;
         frequencyData.forEach(function(item, i) { 
             cubes[i] =  new THREE.Mesh( geometry,  new THREE.MeshPhongMaterial( { color: 0x00ff00 } ) );
+            color = i*15;
             cubes[i].material.color.setHSL( (15*i+1)/360, 1, 0.5);;
             console.log(item);
             cubes[i].position.set(positionX,0.001,0);
@@ -92,7 +98,7 @@
                 frequencyData.forEach(function(item, i) {
                     item = 15*item;
                     item = item.toFixed(2);
-                    cubes[i].material.color.setHSL( (15*i+1)/360, 0.5, 0.5);
+                    cubes[i].material.color.setHSL( (15*i+1)/360, 0.7, 0.5);
                     cubes[i].scale.y = (item+1)/256*100;
                 });
                 renderer.render(scene, camera);
