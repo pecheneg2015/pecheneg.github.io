@@ -89,7 +89,7 @@
     })
 
      $( ".next" ).click(function() {
-         if(currentStationIndex < (stationList.length-1)
+         if(currentStationIndex < (stationList.length-1))
          {
             $(".menu>ul>a").attr("data-active","0");
             currentStationIndex++;
