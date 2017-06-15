@@ -26,7 +26,7 @@
         $(".menu>ul>a").first().attr("data-active","1");
          $( "input[name='volumeValueSmall'],input[name='volumeValueBig']" ).val(vol);
     if (stationList[0]["streams"][0]["stream"]){
-        audio.src = stationList[currentStationIndex]["streams"][0]["stream"];
+        audio.src = "https://cors-anywhere.herokuapp.com/"+stationList[currentStationIndex]["streams"][0]["stream"];
          $(".marquee").text(stationList[currentStationIndex]["name"]);
     }else{
     audio.src = 'http://online.radioc.ru:8000/radioc';}  
