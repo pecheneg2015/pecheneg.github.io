@@ -1,0 +1,128 @@
+*::-webkit-input-placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+*:-moz-placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+*::-moz-placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+*:-ms-input-placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {}
+
+body input:required:valid,
+body textarea:required:valid {}
+
+
+html,body{ 
+	width:100%;
+	height:100%;
+	background:#111;
+    z-index: -1;
+}
+
+html{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+canvas{
+  display:block;
+  vertical-align:bottom;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  position: fixed
+}
+
+#particles-js{
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100%;
+  height: 100vh;
+  background: #4B79A1;  /* совсем беда */
+  background: -webkit-linear-gradient(to top, #283E51, #0A2342);  /* Chrome, Safari */
+  background: linear-gradient(to top, #283E51, #0A2342); /* IE 10+/ Edge, Firefox, Opera, */
+  background: -olinear-gradient(to top, #283E51, #0A2342); 
+}
+
+#headerLabel{
+  
+    background: none;
+    color:white;
+    text-align: center;
+    font-family: 'PT Serif', serif;
+    font-size: 50px;
+    margin: 0px auto;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
+}
+
+#buttonsPanel{
+    margin-top: 25px;
+  /*  background: rgba(40,62,81,0.8);
+    filter: blur(4px);*/
+    z-index: 1;    
+}
+
+.horoIcon{
+    font-family: Zodiac;
+
+    padding-right: 10px;
+    padding-top:10px;
+}
+
+.horoLink{
+    font-family: 'PT Serif', serif;
+    color: white;
+    font-size: 20px;
+    padding-right: 10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    background: rgba(100,100,100,0.8);
+    border: 1px white solid;
+    border-radius: 10px;
+    text-align: center;
+    margin: 5px 5px;
+}
+
+
+.horoLink:hover {
+color:red !important
+}
+
+#infoPanel{
+    text-align: center;
+    color:white;
+    margin-top:20px;
+
+
+}
+
+#horo{
+     font-family: 'PT Serif', serif;
+    color: white;
+    font-size: 20px;
+}
+
+#infoPanel{
+     background: rgba(100,100,100,0.9);
+    border: 1px white solid;
+    border-radius: 10px;
+    text-align: center;
+}
+
+@media only screen and (max-width : 768px) {
+    #headerLabel{
+        font-size: 30px;
+    }
+}
